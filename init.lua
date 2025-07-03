@@ -13,3 +13,5 @@ require('config.keymaps')
 --Lazy.nvim
 require('config.lazy')
 
+-- lsp
+require('config.lsp')
