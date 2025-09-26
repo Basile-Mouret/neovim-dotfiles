@@ -1,7 +1,6 @@
 -- ~/.config/nvim/lua/config/lsp.lua
--- Julials broke with mason, can be removed when fixed
 
-require('lspconfig')['julials'].setup({
+vim.lsp.config.julials = {
     cmd = {
         "julia",
         "--project=" .. vim.fn.expand("~") .. "/.julia/environments/lsp/",
@@ -39,4 +38,4 @@ require('lspconfig')['julials'].setup({
     filetypes = { 'julia' },
     root_dir = require('lspconfig').util.root_pattern("Project.toml", "JuliaProject.toml"),
     settings = {}
-})
+}

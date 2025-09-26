@@ -14,6 +14,9 @@ return {
     local cmp = require('cmp')
     local luasnip = require('luasnip')
 
+    -- Load custom snippets
+    luasnip.add_snippets("typst", require("snippets.typst"))
+
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -52,8 +55,8 @@ return {
         end, { 'i', 's' }),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp', priority = 1000 },
-        { name = 'luasnip', priority = 750},
+        { name = 'luasnip', priority = 1000},
+        { name = 'nvim_lsp', priority = 750 },
         { name = 'path', priority = 500 },
         { name = 'buffer', priority = 250 },
       })
