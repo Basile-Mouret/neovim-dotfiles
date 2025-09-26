@@ -7,4 +7,11 @@ return {
   opts = {
     open_cmd = "qutebrowser %s", 
   }, -- lazy.nvim will implicitly call `setup {}`
+
+  -- Syntax highlighting
+  {
+    "kaarmu/typst.vim",
+    ft = "typst",
+    lazy = false,
+  },
 }

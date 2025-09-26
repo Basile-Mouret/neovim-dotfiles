@@ -1,4 +1,5 @@
 -- ~/.config/nvim/lua/config/lsp.lua
+-- Julials broke with mason, can be removed when fixed
 
 require('lspconfig')['julials'].setup({
     cmd = {
