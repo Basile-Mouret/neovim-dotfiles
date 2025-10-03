@@ -5,7 +5,7 @@ return {
   lazy = false, -- or ft = 'typst' if you want it to load only for typst files
   version = '1.*',
   opts = {
-    open_cmd = "qutebrowser %s", 
+    open_cmd = "qutebrowser %s >/dev/null 2>&1 &", 
   }, -- lazy.nvim will implicitly call `setup {}`
 
 }

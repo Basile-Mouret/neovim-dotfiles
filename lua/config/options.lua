@@ -13,5 +13,5 @@ vim.o.hlsearch = false
 vim.o.signcolumn = 'yes'
 vim.o.undofile = true -- Persistent undo
 vim.o.updatetime = 300 -- Faster completion and LSP updates
-vim.o.termguicolors = true -- Enable true colors
-
+vim.o.termguicolors = true -- Enable true colors 
+vim.opt.scrolloff = 4

@@ -1,5 +1,12 @@
 -- ~/.config/nvim/lua/config/lsp.lua
 
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+})
+
 vim.lsp.config.julials = {
     cmd = {
         "julia",
@@ -39,3 +46,39 @@ vim.lsp.config.julials = {
     root_dir = require('lspconfig').util.root_pattern("Project.toml", "JuliaProject.toml"),
     settings = {}
 }
+
+vim.lsp.config.tinymist = {
+        on_attach = function(client, bufnr)
+
+                vim.keymap.set("n", "<leader>tp", function()
+
+                        client:exec_cmd({
+
+                                title = "pin",
+
+                                command = "tinymist.pinMain",
+
+                                arguments = { vim.api.nvim_buf_get_name(0) },
+
+                        }, { bufnr = bufnr })
+
+                end, { desc = "[T]inymist [P]in", noremap = true })
+
+                vim.keymap.set("n", "<leader>tu", function()
+
+                        client:exec_cmd({
+
+                                title = "unpin",
+
+                                command = "tinymist.pinMain",
+
+                                arguments = { vim.v.null },
+
+                        }, { bufnr = bufnr })
+
+                end, { desc = "[T]inymist [U]npin", noremap = true })
+
+        end,
+
+}
+
